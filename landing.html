@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Admitido - Cursos para examen de admisión UDG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&family=Maven+Pro:wght@500;700&family=Monsieur+La+Doulaise&family=PT+Sans&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Landing_base.css">
+    <link rel="stylesheet" href="Landing_componentes.css">
+    <link rel="stylesheet" href="Landing_diaposicion.css">
+    <link rel="stylesheet" href="Landing_secciones.css">
+    <link rel="stylesheet" href="Landing_animaciones.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <img src="Landing_logo_PAA_sin_fondo.png" style="width: 50px;" alt="Logo Proyecto Admitido">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#profesores">Profesores</a></li>
+                    <li><a href="#pricing">Paquetes</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn btn-login" id="loginBtn"><i class="fas fa-user"></i> Iniciar Sesión</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Preparación para el examen de admisión UDG</h1>
+            <p>La mejor preparación para asegurar tu lugar en la Universidad de Guadalajara. Método probado con los mejores resultados.</p>
+            <a href="#pricing" class="btn btn-primary">Ver Paquetes <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+    
+    <!-- Partículas flotantes -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator"></div>
+</section>
+
+    <section id="cursos">
+    <div class="section-title">
+        <h2>Nuestros Cursos</h2>
+        <p>Todo lo que necesitas para aprobar tu examen de admisión</p>
+    </div>
+    <div class="cursos-grid">
+        <div class="curso-item">
+            <div class="curso-badge">1</div>
+            <div class="curso-icon"><i class="fas fa-file-alt"></i></div>
+            <h3>10 Exámenes de Práctica</h3>
+            <p>Realiza 10 exámenes con formato idéntico al examen real de la UDG.</p>
+            <div class="particles">
+                <div class="particle" style="top: 20%; left: 20%; width: 4px; height: 4px; animation-delay: 0s;"></div>
+                <div class="particle" style="top: 60%; left: 80%; width: 6px; height: 6px; animation-delay: 1s;"></div>
+            </div>
+        </div>
+        <div class="curso-item">
+            <div class="curso-badge">2</div>
+            <div class="curso-icon"><i class="fas fa-video"></i></div>
+            <h3>Explicación en Vivo</h3>
+            <p>Sesiones donde nuestros profesores resuelven todas tus dudas en tiempo real.</p>
+            <div class="particles">
+                <div class="particle" style="top: 30%; left: 70%; width: 5px; height: 5px; animation-delay: 0.5s;"></div>
+                <div class="particle" style="top: 70%; left: 20%; width: 4px; height: 4px; animation-delay: 1.5s;"></div>
+            </div>
+        </div>
+        <div class="curso-item">
+            <div class="curso-badge">3</div>
+            <div class="curso-icon"><i class="fas fa-user-graduate"></i></div>
+            <h3>Asesoría Personalizada</h3>
+            <p>Recibe asesoría para identificar y fortalecer tus áreas de oportunidad.</p>
+            <div class="particles">
+                <div class="particle" style="top: 40%; left: 40%; width: 6px; height: 6px; animation-delay: 0.8s;"></div>
+                <div class="particle" style="top: 20%; left: 60%; width: 3px; height: 3px; animation-delay: 2.2s;"></div>
+            </div>
+        </div>
+        <div class="curso-item">
+            <div class="curso-badge">4</div>
+            <div class="curso-icon"><i class="fas fa-book"></i></div>
+            <h3>Banco de Ejercicios</h3>
+            <p>Acceso ilimitado a nuestro banco con más de 1000 problemas resueltos.</p>
+            <div class="particles">
+                <div class="particle" style="top: 60%; left: 60%; width: 5px; height: 5px; animation-delay: 1.2s;"></div>
+                <div class="particle" style="top: 30%; left: 30%; width: 4px; height: 4px; animation-delay: 2.5s;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cursos-particles">
+    <div class="cursos-particle"></div>
+    <div class="cursos-particle"></div>
+    <div class="cursos-particle"></div>
+    <div class="cursos-particle"></div>
+</div>
+</section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Paquetes</h2>
+                <p>Elige el plan que mejor se adapte a tus necesidades</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Paquete 5 Examenes -->
+                <div class="pricing-card visible">
+                    <div class="pricing-header">
+                        <img src="5_examenes.svg" alt="Paquete 5 Examenes" style="width: 100%; height: auto;">
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>5 Exámenes</li>
+                            <li>Explicación en vivo</li>
+                            <li>Asesorías</li>
+                            <li>Banco de ejercicios</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <div style="margin-bottom: 20px;">
+                            <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.7); margin: 0 0 5px 0;">Precio de Lista <del>$1,400</del></p>
+                            <div class="pricing-price"><span>$</span>1,000</div>
+                        </div>
+                        <button class="btn btn-primary">Comprar Ahora <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+                <!-- Curso 11 Semanas (Admitido) - Destacado -->
+                <div class="pricing-card featured visible">
+                    <div class="pricing-header">
+                       <img src="11_semanas.svg" alt="Curso 11 Semanas" style="width: 100%; height: auto;">
+                   </div>
+                   <div class="pricing-features">
+                        <ul>
+                           <li>Inicia: 25 Agosto</li>
+                           <li>Finaliza: 7 Noviembre</li>
+                           <li>8AM-11AM | 6PM-9PM</li>
+                           <li>12 Exámenes de simulación</li>
+                       </ul>
+                   </div>
+                   <div class="pricing-footer">
+                        <div style="margin-bottom: 20px;">
+                            <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.7); margin: 0 0 5px 0;">Precio de Lista <del>$4,000</del></p>
+                            <div class="pricing-price"><span>$</span>3,600</div>
+                        </div>
+                       <button class="btn btn-primary">Comprar Ahora <i class="fas fa-shopping-cart"></i></button>
+                   </div>
+                </div>
+                <!-- Paquete 10 Examenes -->
+                <div class="pricing-card visible">
+                    <div class="pricing-header">
+                        <img src="10_examenes.svg" alt="Paquete 10 Examenes" style="width: 100%; height: auto;">
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>10 Exámenes</li>
+                            <li>Explicación en vivo</li>
+                            <li>Asesorías</li>
+                            <li>Banco de ejercicios</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <div style="margin-bottom: 20px;">
+                            <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.7); margin: 0 0 5px 0;">Precio de Lista <del>$2,000</del></p>
+                            <div class="pricing-price"><span>$</span>1,600</div>
+                        </div>
+                        <button class="btn btn-primary">Comprar Ahora <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="pricing-particles">
+    <div class="pricing-particle"></div>
+    <div class="pricing-particle"></div>
+    <div class="pricing-particle"></div>
+</div>
+    </section>
+
+        <section class="teachers" id="profesores">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nuestros Maestros</h2>
+                    <p>Profesionales con amplia experiencia en preparación</p>
+                </div>
+                <div class="teachers-grid">
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <div class="teacher-name-overlay">
+                                <span class="teacher-firstname">Andrés</span>
+                                <span class="teacher-lastname">Reyes</span>
+                            </div>
+                        </div>
+                        <div class="teacher-info">
+                            <p>Especialista en Matemáticas y Física con más de 8 años de experiencia.</p>
+                        </div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <div class="teacher-name-overlay">
+                                <span class="teacher-firstname">Néstor</span>
+                                <span class="teacher-lastname">Mejía</span>
+                            </div>
+                        </div>
+                        <div class="teacher-info">
+                            <p>Experto en Español y Ciencias Sociales. Ha ayudado a más de 500 estudiantes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Proyecto Admitido</h3>
+                    <p>La mejor preparación para el examen de admisión UDG.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#cursos">Cursos</a></li>
+                        <li><a href="#profesores">Profesores</a></li>
+                        <li><a href="#pricing">Paquetes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@proyectoadmitido.com">info@proyectoadmitido.com</a></li>
+                        <li><a href="tel:+523312345678">+52 33 1234 5678</a></li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Proyecto Admitido. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/5213312345678" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <button class="close-modal" id="closeModal">&times;</button>
+        
+        <!-- Partículas del modal -->
+        <div class="modal-particles">
+            <div class="modal-particle"></div>
+            <div class="modal-particle"></div>
+            <div class="modal-particle"></div>
+        </div>
+        
+        <div class="modal-header">
+            <h2>Iniciar Sesión</h2>
+        </div>
+        <div class="modal-body">
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Correo Electrónico" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión <i class="fas fa-sign-in-alt"></i></button>
+            </form>
+            
+            <div class="modal-links">
+                <a href="#olvide-contrasena">¿Olvidaste tu contraseña?</a>
+                <span style="color: rgba(255,255,255,0.3)">|</span>
+                <a href="#registro">Crear Cuenta</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="script_landing.js"></script>
+</body>
+</html>
+

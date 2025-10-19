@@ -1,0 +1,565 @@
+/* --- components.css --- */
+/* Estilos para elementos reutilizables como botones, modales, etc. */
+
+/* Botones */
+.btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    font-family: var(--font-main);
+    font-size: 1rem;
+}
+
+.btn-login {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+    z-index: -1;
+}
+
+.btn-login:hover {
+    background: white;
+    color: var(--azul-oscuro);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+.btn-login:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--azul-claro) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+    z-index: -1;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(76, 201, 240, 0.4);
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Títulos de Sección Genéricos */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2 {
+    font-size: 2.8rem;
+    font-family: var(--font-bebas);
+    color: var(--gray-100);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+.section-title p {
+    color: var(--gray-100);
+    opacity: 0.8;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Modal BIEN PERRÓN */
+.modal { 
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.9); 
+    z-index: 2000; 
+    align-items: center; 
+    justify-content: center; 
+    backdrop-filter: blur(10px); 
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modal.active { 
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content { 
+    background: linear-gradient(145deg, 
+                rgba(26, 32, 44, 0.95) 0%, 
+                rgba(33, 57, 119, 0.3) 50%,
+                rgba(76, 201, 240, 0.2) 100%);
+    border-radius: 25px; 
+    width: 90%; 
+    max-width: 500px; 
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(76, 201, 240, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden; 
+    transform: scale(0.8) translateY(50px); 
+    opacity: 0; 
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+.modal.active .modal-content { 
+    transform: scale(1) translateY(0); 
+    opacity: 1; 
+}
+
+/* Efecto de borde animado */
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+                var(--azul-claro), 
+                var(--accent), 
+                var(--azul-oscuro));
+    opacity: 0.8;
+    animation: borderShimmer 3s ease-in-out infinite;
+}
+
+.modal-header { 
+    background: linear-gradient(135deg, 
+                rgba(33, 57, 119, 0.8) 0%, 
+                rgba(50, 90, 159, 0.6) 50%,
+                rgba(76, 201, 240, 0.4) 100%);
+    padding: 40px 30px 30px; 
+    text-align: center; 
+    color: white; 
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(76, 201, 240, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(50, 90, 159, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.modal-header h2 { 
+    font-size: 2.5rem; 
+    font-family: var(--font-bebas);
+    letter-spacing: 2px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #ffffff, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-body { 
+    padding: 40px 30px; 
+    position: relative;
+}
+
+/* Partículas para el modal */
+.modal-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.modal-particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: modalFloat 6s ease-in-out infinite;
+}
+
+.modal-particle:nth-child(1) {
+    width: 6px;
+    height: 6px;
+    top: 20%;
+    left: 10%;
+    background: rgba(76, 201, 240, 0.5);
+    animation-delay: 0s;
+}
+
+.modal-particle:nth-child(2) {
+    width: 4px;
+    height: 4px;
+    top: 60%;
+    left: 85%;
+    background: rgba(255, 255, 255, 0.4);
+    animation-delay: 2s;
+}
+
+.modal-particle:nth-child(3) {
+    width: 8px;
+    height: 8px;
+    top: 80%;
+    left: 15%;
+    background: rgba(50, 90, 159, 0.4);
+    animation-delay: 4s;
+}
+
+.form-group { 
+    margin-bottom: 25px; 
+    position: relative;
+    z-index: 2;
+}
+
+.form-control { 
+    width: 100%; 
+    padding: 18px 20px 18px 50px; 
+    border-radius: 15px; 
+    border: 2px solid rgba(255, 255, 255, 0.1); 
+    background: rgba(0, 0, 0, 0.3); 
+    color: var(--gray-100); 
+    font-size: 1rem; 
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    font-family: var(--font-main);
+    backdrop-filter: blur(10px);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-control:focus { 
+    outline: none; 
+    border-color: var(--accent); 
+    box-shadow: 
+        0 0 0 3px rgba(76, 201, 240, 0.2),
+        0 10px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Iconos dentro de los inputs */
+.form-group {
+    position: relative;
+}
+
+.form-group::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 3;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group:first-child::before {
+    content: '\f0e0'; /* Icono de email */
+}
+
+.form-group:nth-child(2)::before {
+    content: '\f023'; /* Icono de contraseña */
+}
+
+.form-control:focus ~ .form-group::before {
+    color: var(--accent);
+}
+
+.close-modal { 
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    background: rgba(255, 255, 255, 0.1); 
+    border: none; 
+    color: white; 
+    font-size: 1.8rem; 
+    cursor: pointer; 
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-modal:hover { 
+    background: rgba(255, 255, 255, 0.2); 
+    transform: rotate(90deg) scale(1.1);
+    color: var(--accent);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón de submit mejorado */
+.modal-body .btn-primary {
+    width: 100%;
+    padding: 18px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--azul-claro) 100%);
+    border: none;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.modal-body .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.modal-body .btn-primary:hover::before {
+    left: 100%;
+}
+
+.modal-body .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 15px 30px rgba(76, 201, 240, 0.4),
+        0 0 0 1px rgba(76, 201, 240, 0.2);
+}
+
+/* Enlaces adicionales */
+.modal-links {
+    text-align: center;
+    margin-top: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.modal-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.modal-links a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Animaciones */
+@keyframes borderShimmer {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes modalFloat {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-15px) translateX(10px);
+    }
+    50% {
+        transform: translateY(-5px) translateX(-5px);
+    }
+    75% {
+        transform: translateY(-10px) translateX(8px);
+    }
+}
+
+/* Efecto de carga en el botón */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 90%;
+        margin: 20px;
+    }
+    
+    .modal-header {
+        padding: 30px 20px 25px;
+    }
+    
+    .modal-header h2 {
+        font-size: 2rem;
+    }
+    
+    .modal-body {
+        padding: 30px 20px;
+    }
+    
+    .form-control {
+        padding: 15px 15px 15px 45px;
+    }
+    
+    .close-modal {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .modal-body {
+        padding: 25px 15px;
+    }
+    
+    .form-control {
+        padding: 14px 14px 14px 40px;
+        font-size: 0.9rem;
+    }
+    
+    .modal-body .btn-primary {
+        padding: 16px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Botón Flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 
+        0 5px 15px rgba(0,0,0,0.3),
+        0 0 0 0 rgba(37, 211, 102, 0.7);
+    z-index: 100;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-decoration: none;
+    animation: pulseWhatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 
+        0 8px 25px rgba(0,0,0,0.4),
+        0 0 0 10px rgba(37, 211, 102, 0.2);
+    animation: none;
+}
+
+@keyframes pulseWhatsapp {
+    0% {
+        box-shadow: 
+            0 5px 15px rgba(0,0,0,0.3),
+            0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 
+            0 5px 15px rgba(0,0,0,0.3),
+            0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 
+            0 5px 15px rgba(0,0,0,0.3),
+            0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
