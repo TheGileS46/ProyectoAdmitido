@@ -68,4 +68,23 @@
         });
     });
 
+    document.querySelectorAll('.pricing-card .btn-primary').forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+        const paquetes = [
+            'Paquete 5 Exámenes',
+            'Curso 11 Semanas (Admitido)',
+            'Paquete 10 Exámenes'
+        ];
+        const paquete = paquetes[i] || 'Paquete';
+        const mensaje = encodeURIComponent(`Hola, me gustaría pedir informes sobre el ${paquete}.`);
+        const telefono = '523343254082';
+        window.open(`https://api.whatsapp.com/send?phone=${telefono}&text=${mensaje}`, '_blank');
+    });
+});
+
+const tel = '523343254082';
+const text = encodeURIComponent('Hola, me gustaría pedir informes sobre sus paquetes.');
+document.getElementById('waFloat').href = `https://api.whatsapp.com/send?phone=${tel}&text=${text}`;
+
+
     
