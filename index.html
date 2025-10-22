@@ -288,9 +288,16 @@
         </div>
     </footer>
     
-    <a href="https://wa.me/5213312345678" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<a id="waFloat" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+const tel = '523343254082';
+const text = encodeURIComponent('Hola, me gustaría pedir informes sobre sus paquetes.');
+document.getElementById('waFloat').href = `https://api.whatsapp.com/send?phone=${tel}&text=${text}`;
+</script>
+
 
 <div class="modal" id="loginModal">
     <div class="modal-content">
@@ -326,9 +333,23 @@
     </div>
 </div>
 
-    <script>
-    </script>
     <script src="script_landing.js"></script>
+    <script>
+document.querySelectorAll('.pricing-card .btn-primary').forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+        const paquetes = [
+            'Paquete 5 Exámenes',
+            'Curso 11 Semanas (Admitido)',
+            'Paquete 10 Exámenes'
+        ];
+        const paquete = paquetes[i] || 'Paquete';
+        const mensaje = encodeURIComponent(`Hola, me gustaría pedir informes sobre el ${paquete}.`);
+        const telefono = '523343254082';
+        window.open(`https://api.whatsapp.com/send?phone=${telefono}&text=${mensaje}`, '_blank');
+    });
+});
+</script>
+
 </body>
 </html>
 
