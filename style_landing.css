@@ -979,7 +979,7 @@ html {
             }
         }
         
-        /* ======== Responsive Mejorado ======== */
+       /* ======== Responsive Mejorado con Header ======== */
 @media (max-width: 1200px) {
     .taller-container {
         padding: 0 40px;
@@ -987,6 +987,10 @@ html {
 }
 
 @media (max-width: 992px) {
+    .taller-gratuito {
+        padding-top: calc(80px + 150px); /* 80px original + 70px header */
+    }
+
     .taller-content {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1028,6 +1032,10 @@ html {
 }
 
 @media (max-width: 768px) {
+    .taller-gratuito {
+        padding-top: calc(80px + 150px); /* Ajuste para móvil */
+    }
+
     .taller-content {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -1095,10 +1103,11 @@ html {
     .taller-contact {
         flex-direction: column;
         gap: 10px;
+        
     }
 
     .contact-link {
-        width: 80%;
+        width: 100%;
         justify-content: center;
     }
 
@@ -1133,6 +1142,10 @@ html {
         padding: 0 15px;
     }
 
+    .taller-gratuito {
+        padding-top: calc(60px + 150px); /* Ajuste header más pequeño en mobile */
+    }
+
     .taller-title {
         font-size: 1.6rem;
     }
@@ -1155,6 +1168,7 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 /* Hero Section - BIEN PERRO */
