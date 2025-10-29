@@ -979,25 +979,183 @@ html {
             }
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .taller-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .taller-title {
-                font-size: 2rem;
-            }
-            
-            .includes-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .taller-contact {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+        /* ======== Responsive Mejorado ======== */
+@media (max-width: 1200px) {
+    .taller-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .taller-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .taller-title {
+        font-size: 2.2rem;
+    }
+
+    .taller-subtitle {
+        font-size: 1.1rem;
+        max-width: 90%;
+    }
+
+    .includes-list {
+        grid-template-columns: 1fr;
+    }
+
+    .taller-info {
+        padding: 25px;
+    }
+
+    .taller-card {
+        max-width: 100%;
+        padding: 25px;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .card-dates {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .taller-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .taller-title {
+        font-size: 1.8rem;
+    }
+
+    .taller-subtitle {
+        font-size: 1rem;
+    }
+
+    .taller-badge {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+
+    .taller-info {
+        padding: 20px;
+    }
+
+    .taller-instructor {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .instructor-avatar {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .instructor-info h4 {
+        font-size: 1.1rem;
+    }
+
+    .instructor-info p {
+        font-size: 0.9rem;
+    }
+
+    .detail-item {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .taller-includes h3 {
+        font-size: 1.2rem;
+    }
+
+    .include-item {
+        font-size: 0.95rem;
+    }
+
+    .taller-cta {
+        margin-top: 20px;
+    }
+
+    .btn-taller {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    .taller-contact {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-link {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .taller-card {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .card-dates {
+        padding: 10px;
+    }
+
+    .date-label, .date-value {
+        font-size: 0.9rem;
+    }
+
+    .card-lema {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .taller-container {
+        padding: 0 15px;
+    }
+
+    .taller-title {
+        font-size: 1.6rem;
+    }
+
+    .taller-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .btn-taller {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+
+    .contact-link {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .includes-list, .detail-item {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* Hero Section - BIEN PERRO */
 .hero {
